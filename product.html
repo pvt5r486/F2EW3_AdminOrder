@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="F2E Week3 - order">
+    <!--越前面權重越高-->
+    <meta name="keywords" content="F2E">
+
+    <!--當我們網站連結 貼到臉書上時-->
+    <meta property="og:title" content="F2E Week3 - order">
+    <meta property="og:description" content="F2E Week3 - order">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FB圖片連結">
+    <meta property="og:url" content="FB上的網址">
+
+    <!--小圖示-->
+    <!-- <link rel="shortcut icon " href="favicon.ico " type="image/x-icon "> -->
+    <!-- 第三方CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>F2E Week3 - Admin Order</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="logo" href="index.html">Shoptime</a>
+                <ul class="menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="orders.html">ORDERS</a></li>
+                    <li><a href="product.html" class="active">PRODUCT</a></li>
+                </ul>
+                <div class="user">ADMIN</div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrap">
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="prod selectCheck" id="prodSelectCheck">
+                        <input type="checkbox" name="selectAll" id="selectAll" class="custom_checkbox">
+                        <label for="selectAll"></label>
+                        <i class="fas fa-caret-down">
+                            <div class="menu">
+                                <a href="#">PUBLISHED</a>
+                                <a href="#">UNPUBLISHED</a>
+                            </div>
+                        </i>
+                        <div class="tagstatus">
+                            <i class="fas fa-tags"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="additem">ADD NEW PRODUCT
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+                <table class="prodtable">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Original</th>
+                            <th>Discount</th>
+                            <th width="100px">Size</th>
+                            <th width="100px">Color</th>
+                            <th width="100px">Inventory</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+                <div class="cover">
+                    <div class="itemform">
+                        <div class="formtitle">
+                            <h3>ADD NEW PRODUCT</h3>
+                            <i class="fas fa-times" id="hideModal"></i>
+                        </div>
+                        <div class="formbody">
+                            <div class="uploadblock">
+                                <label for="fileupload" class="custumupload">
+                                    <i class="fas fa-cloud-upload-alt fa-3x"></i>
+                                    <span>Drag an image or click here to upload…</span>
+                                    <input type="file" name="fileupload" id="fileupload">
+                                </label>
+                                <ul class="showimage">
+                                    <li style="background-image: url('https://images.unsplash.com/photo-1531697218799-ed0ae884c6c8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=78ee3f5ff97e356032f53f9cf1a2ef51&auto=format&fit=crop&w=500&q=80')"></li>
+                                    <li style="background-image: url('https://images.unsplash.com/photo-1521189823702-255a7471ee5a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f8cb53525d2482e18e1fe4f6ee31482f&auto=format&fit=crop&w=750&q=80')"></li>
+
+                                </ul>
+                            </div>
+                            <div class="prodsetting">
+                                <div class="prodDescription">
+                                    <label for="prodName" class="subtitle">Product Discription</label>
+                                    <input type="text" name="prodName" id="prodName" class="custumTextbox" placeholder="Product Name">
+                                    <textarea name="Description" id="Description" cols="30" rows="6" class="custumTextarea"
+                                        placeholder="Product Description"></textarea>
+                                </div>
+                                <div class="price">
+                                    <span class="subtitle">Price</span>
+                                    <div class="templete">
+                                        <div class="pricetext">
+                                            <label for="original" title="original">
+                                                <input type="text" name="original" id="original">
+                                            </label>
+                                        </div>
+                                        <div class="pricetext">
+                                            <label for="discount" title="discount">
+                                                <input type="text" name="discount" id="discount">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="specification">
+                                    <span class="subtitle">Specification</span>
+                                    <div class="templete">
+                                        <div class="groupselect">
+                                            <label for="size1" title="Size">
+                                                <select name="size1" id="size1" data-type="size">
+                                                    <option value="L">L</option>
+                                                    <option value="M">M</option>
+                                                    <option value="S">S</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="groupcolor">
+                                            <label for="color1" title="Color">
+                                                <input type="text" name="color1" id="color1">
+                                            </label>
+                                        </div>
+                                        <div class="groupinventory">
+                                            <label for="inventory1" title="Inventory">
+                                                <input type="text" name="inventory1" id="inventory1">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="templete">
+                                        <div class="groupselect">
+                                            <label for="size2" title="Size">
+                                                <select name="size2" id="size2" data-type="size">
+                                                    <option value="L">L</option>
+                                                    <option value="M">M</option>
+                                                    <option value="S">S</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="groupcolor">
+                                            <label for="color2" title="Color">
+                                                <input type="text" name="color2" id="color2">
+                                            </label>
+                                        </div>
+                                        <div class="groupinventory">
+                                            <label for="inventory2" title="Inventory">
+                                                <input type="text" name="inventory2" id="inventory2">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" id="addNewSpecbtn">ADD NEW SPECIFICATION<i class="fas fa-plus"></i></a>
+                                <div class="submit">
+                                    <input type="button" class="unpublish" id="unpublish" value="SAVE DRAFT">
+                                    <input type="button" class="publish" id="publish" value="PUBLISH">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 第三方JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="javascript/all.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="F2E Week3 - order">
+    <!--越前面權重越高-->
+    <meta name="keywords" content="F2E">
+
+    <!--當我們網站連結 貼到臉書上時-->
+    <meta property="og:title" content="F2E Week3 - order">
+    <meta property="og:description" content="F2E Week3 - order">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FB圖片連結">
+    <meta property="og:url" content="FB上的網址">
+
+    <!--小圖示-->
+    <!-- <link rel="shortcut icon " href="favicon.ico " type="image/x-icon "> -->
+    <!-- 第三方CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>F2E Week3 - Admin Order</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="logo" href="index.html">Shoptime</a>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="orders.html">ORDERS</a></li>
+                    <li><a href="product.html">PRODUCT</a></li>
+                </ul>
+                <div class="user">ADMIN</div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrap">
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <h2 class="title">OVERVIEW</h2>
+                    <div class="conditions">
+                        <div class="dates">
+                            <span id="targetdate">2018/6/6</span>
+                            <i class="fas fa-caret-right"></i>
+                            <span id="today">2018/6/13</span>
+                        </div>
+                        <div class="unit">
+                            <span>Weekly</span>
+                            <i class="fas fa-caret-down"></i>
+                            <div class="menu" id="unitMenu">
+                                <a href="#">Daily</a>
+                                <a href="#">Weekly</a>
+                                <a href="#">Monthly</a>
+                                <a href="#">Yearly</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="block">
+                        <span>
+                            <i class="fab fa-bitcoin fa-2x"></i>TOTAL REVENUE
+                        </span>
+                        <span class="total color green" id="revenue">54,540</span>
+                    </div>
+                    <div class="block">
+                        <span>
+                            <i class="fas fa-boxes fa-2x"></i>TOTAL COST
+                        </span>
+                        <span class="total color red" id="cost">12,660</span>
+                    </div>
+                    <div class="block">
+                        <span>
+                            <i class="fas fa-money-bill-alt fa-2x"></i>NET INCOME
+                        </span>
+                        <span class="total color blue" id="income">41,880</span>
+                    </div>
+                </div>
+                <div class="chart">
+                    <h3>Activity</h3>
+                    <canvas id="canvas"></canvas>
+                </div>
+
+                <div class="transactionRecord">
+                    <div class="transactionWeb">
+                        <h3>Transaction Website</h3>
+                        <ul>
+                            <li>
+                                <span class="webicon"><i class="fab fa-facebook"></i></span>
+                                <span class="webname">Facebook.com</span>
+                                <span class="num">45,836</span>
+                                <span class="rate green"><i class="fas fa-arrow-up"></i></span>
+                                <span class="grow green">20%
+                                    <div class="message">
+                                        INCREASE<span class="highlight green"> 899 </span>VIEWS<br>
+                                        <span class="history">last week: 44,937</span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="webicon"><i class="fab fa-google"></i></span>
+                                <span class="webname">google.com</span>
+                                <span class="num">23,582</span>
+                                <span class="rate green"><i class="fas fa-arrow-up"></i></span>
+                                <span class="grow green">12%
+                                    <div class="message">
+                                        INCREASE<span class="highlight green"> 899 </span>VIEWS<br>
+                                        <span class="history">last week: 44,937</span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="webicon"><i class="fab fa-twitter-square"></i></span>
+                                <span class="webname">Shopify.com</span>
+                                <span class="num">2,489</span>
+                                <span class="rate red"><i class="fas fa-arrow-down"></i></span>
+                                <span class="grow red"></i>15%
+                                    <div class="message">
+                                        REDUCE<span class="highlight red"> 899 </span>VIEWS<br>
+                                        <span class="history">last week: 44,937</span>
+                                    </div>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="webicon"><i class="fab fa-wordpress"></i></span>
+                                <span class="webname">Wordpress.com</span>
+                                <span class="num">1,057</span>
+                                <span class="rate red"><i class="fas fa-arrow-down"></i></span>
+                                <span class="grow red">30%
+                                    <div class="message">
+                                        REDUCE<span class="highlight red"> 899 </span>VIEWS<br>
+                                        <span class="history">last week: 44,937</span>
+                                    </div>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="lastestOrder">
+                        <h3>Latest Orders</h3>
+                        <div class="item">
+                            <div class="itempic" style="background-image: url('https://images.unsplash.com/photo-1528750596806-ff12e21cda04?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e06d076f451176a53c29c0b24cbb746&auto=format&fit=crop&w=750&q=80')"></div>
+                            <ul class="iteminfo">
+                                <li><span class="itemname">Vintage T-shirt</span></li>
+                                <li>
+                                    <i class="fas fa-clock"></i>
+                                    <span>2018/6/13 13:42</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-male"></i>
+                                    <span>Belle Willis</span>
+                                </li>
+                            </ul>
+                            <div class="total">
+                                <span>Total</span><br>
+                                3,200
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="itempic" style="background-image: url('https://images.unsplash.com/photo-1528373553865-c5d96fe764f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3cf8ad613c73d3b01c0d9a6de511af0a&auto=format&fit=crop&w=1350&q=80')"></div>
+                            <ul class="iteminfo">
+                                <li><span class="itemname">Cowboy Jacket</span></li>
+                                <li>
+                                    <i class="fas fa-clock"></i>
+                                    <span>2018/6/13 10:45</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-male"></i>
+                                    <span>Adrian Cummings</span>
+                                </li>
+                            </ul>
+                            <div class="total">
+                                <span>Total</span><br>
+                                2,800
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="itempic" style="background-image: url('https://images.unsplash.com/photo-1521624002551-9ea092b0bc52?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d3180f31423922e28f8f9b73ea95a5d&auto=format&fit=crop&w=1350&q=80')"></div>
+                            <ul class="iteminfo">
+                                <li><span class="itemname">Coach Coat</span></li>
+                                <li>
+                                    <i class="fas fa-clock"></i>
+                                    <span>2018/6/13 8:26</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-male"></i>
+                                    <span>Lura Holland</span>
+                                </li>
+                            </ul>
+                            <div class="total">
+                                <span>Total</span><br>
+                                1,600
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 第三方JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="javascript/all.js"></script>
+</body>
+
+</html>

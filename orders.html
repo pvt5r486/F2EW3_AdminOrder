@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="F2E Week3 - order">
+    <!--越前面權重越高-->
+    <meta name="keywords" content="F2E">
+
+    <!--當我們網站連結 貼到臉書上時-->
+    <meta property="og:title" content="F2E Week3 - order">
+    <meta property="og:description" content="F2E Week3 - order">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FB圖片連結">
+    <meta property="og:url" content="FB上的網址">
+
+    <!--小圖示-->
+    <!-- <link rel="shortcut icon " href="favicon.ico " type="image/x-icon "> -->
+    <!-- 第三方CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>F2E Week3 - Admin Order</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="logo" href="index.html">Shoptime</a>
+                <ul class="menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="orders.html" class="active">ORDERS</a></li>
+                    <li><a href="product.html">PRODUCT</a></li>
+                </ul>
+                <div class="user">ADMIN</div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrap">
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="selectCheck" id="ordersSelectCheck">
+                        <input type="checkbox" name="selectAll" id="selectAll" class="custom_checkbox">
+                        <label for="selectAll"></label>
+                        <i class="fas fa-caret-down">
+                            <div class="menu">
+                                <a href="#">Select All</a>
+                                <a href="#">Unselect All</a>
+                                <a href="#">Paid</a>
+                                <a href="#">Unpaid</a>
+                                <a href="#">Shipping</a>
+                                <a href="#">Done</a>
+                            </div>
+                        </i>
+                        <div class="tagstatus">
+                            <i class="fas fa-tags"></i>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="controlsection">
+                        EDIT SECTION
+                        <i class="fas fa-caret-down"></i>
+                        <div class="checkboxMenu">
+                            <input type="checkbox" name="customer" id="customer" class="custom_checkbox">
+                            <label for="customer">Customer</label>
+                            <input type="checkbox" name="productList" id="productList" class="custom_checkbox">
+                            <label for="productList">Product List</label>
+                            <input type="checkbox" name="total" id="total" class="custom_checkbox">
+                            <label for="total">Total</label>
+                            <input type="checkbox" name="addtoCart" id="addtoCart" class="custom_checkbox">
+                            <label for="addtoCart">Add to Cart</label>
+                            <input type="checkbox" name="checkout" id="checkout" class="custom_checkbox">
+                            <label for="checkout">Check-out</label>
+                            <input type="checkbox" name="address" id="address" class="custom_checkbox">
+                            <label for="address">Address</label>
+                            <input type="checkbox" name="status" id="status" class="custom_checkbox">
+                            <label for="status">Status</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="ordersTable">
+                    <thead>
+                        <th data-name="customer">Customer</th>
+                        <th data-name="productList" width="160px">Product List</th>
+                        <th data-name="total">Total</th>
+                        <th data-name="addtoCart">Add to Cart</th>
+                        <th data-name="checkout">Check-out</th>
+                        <th data-name="address">Address</th>
+                        <th data-name="status">Status</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectitem01" id="selectitem01" class="custom_checkbox">
+                                <label for="selectitem01">Ian Medina</label>
+                            </td>
+                            <td>
+                                <div class="item">Vestibulum.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">Fusce vehicu.
+                                    <div class="price">
+                                        <span>$800</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$2,200</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>386 Windler Drives Apt. 358</td>
+                            <td>
+                                <div class="statusDropdown green">
+                                    Paid
+                                    <i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="even">
+                            <td>
+                                <input type="checkbox" name="selectitem02" id="selectitem02" class="custom_checkbox">
+                                <label for="selectitem02">Manuel Stephens</label>
+                            </td>
+                            <td>
+                                <div class="item">Donec facili.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$1,400</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>531 Orval Mission Suite 134</td>
+                            <td>
+                                <div class="statusDropdown green">
+                                    Paid<i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectitem03" id="selectitem03" class="custom_checkbox">
+                                <label for="selectitem03">Daisy Reynolds</label>
+                            </td>
+                            <td>
+                                <div class="item">Curabitur lo..
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">Donec facili.
+                                    <div class="price">
+                                        <span>$800</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">Nam porttito.
+                                    <div class="price">
+                                        <span>$800</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$3,000</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>38 Juston Islands Apt. 012</td>
+                            <td>
+                                <div class="statusDropdown orange">
+                                    Shipping<i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectitem04" id="selectitem04" class="custom_checkbox">
+                                <label for="selectitem04">Daisy Reynolds</label>
+                            </td>
+                            <td>
+                                <div class="item">Lorem ipsum.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">Nam porttito.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$3,000</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>38 Juston Islands Apt. 012</td>
+                            <td>
+                                <div class="statusDropdown orange">
+                                    Shipping<i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="crossOutLine">
+                            <td>
+                                <input type="checkbox" name="selectitem05" id="selectitem05" class="custom_checkbox">
+                                <label for="selectitem05">Daisy Reynolds</label>
+                            </td>
+                            <td>
+                                <div class="item">Lorem ipsum.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">Nam porttito.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$3,000</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>38 Juston Islands Apt. 012</td>
+                            <td>
+                                <div class="statusDropdown blue">
+                                    Done<i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="crossOutLine">
+                            <td>
+                                <input type="checkbox" name="selectitem06" id="selectitem06" class="custom_checkbox">
+                                <label for="selectitem06">Daisy Reynolds</label>
+                            </td>
+                            <td>
+                                <div class="item">Lorem ipsum.
+                                    <div class="price">
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$1,400</td>
+                            <td>2018/6/8 13:39</td>
+                            <td>2018/6/8 20:23</td>
+                            <td>38 Juston Islands Apt. 012</td>
+                            <td>
+                                <div class="statusDropdown gray">
+                                    Unpaid<i class="fas fa-caret-down"></i>
+                                    <div class="menu">
+                                        <a href="#">Paid</a>
+                                        <a href="#">Unpaid</a>
+                                        <a href="#">Shipping</a>
+                                        <a href="#">Done</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pagenav">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 第三方JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="javascript/all.js"></script>
+</body>
+
+</html>
