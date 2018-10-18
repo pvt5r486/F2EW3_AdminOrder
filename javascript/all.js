@@ -737,6 +737,18 @@ let addMoreSpec = e => {
 }
 
 let addprod = e => {
+    let prodName = document.querySelector('#prodName');
+    let prodDescript = document.querySelector('#Description');
+    let prodOriginal = document.querySelector('#original');
+    let prodDiscount = document.querySelector('#discount');
+    let prodColor = document.querySelector('#color1');
+    let prodInventory = document.querySelector('#inventory1');
+
+    if (prodName.value == '' || prodOriginal.value == '' || prodDiscount.value == '' || prodColor.value == '' || prodInventory.value == ''){
+        alert('您有欄位空白,請確認！');
+        return;
+    }
+
     let dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
     //建立元素
     let product = {
@@ -749,17 +761,13 @@ let addprod = e => {
         status,
     };
 
-    //判斷狀態
+    //代入值
     e.target.value == 'PUBLISH' ? product.status = 'PUBLISHED' : product.status = 'UNPUBLISHED';
-    let prodName = document.querySelector('#prodName');
     product.name = prodName.value;
-    let prodDescript = document.querySelector('#Description');
-    let prodOriginal = document.querySelector('#original');
     product.original = prodOriginal.value;
-    let prodDiscount = document.querySelector('#discount');
     product.discount = prodDiscount.value;
 
-    //用完清除
+    //代入後清除
     prodName.value = '';
     prodOriginal.value = '';
     prodDiscount.value = '';
@@ -784,7 +792,7 @@ let addprod = e => {
     //console.log(JSON.stringify(dataArray));
     //console.log(dataArray);
     //console.log(localStorage.getItem('dataArray'));
-    alert('產品' + product.name + '新增成功,狀態為' + product.status);
+    alert('產品 ' + product.name + ' 新增成功  ,狀態為 ' + product.status);
     //重新渲染表格
     updateTable();
 }
@@ -937,7 +945,7 @@ let updateTable = () => {
                 //console.log(itemCheckBox);
                 let statusLabel = document.querySelector('.tagstatus span');
                 let parentCheckbox = document.querySelector('#selectAll');
-                statusLabel.textContent == e.target.textContent && parentCheckbox.checked == true ?  itemCheckBox.checked = true :  itemCheckBox.checked = false;
+                statusLabel.textContent == e.target.textContent && parentCheckbox.checked == true ? itemCheckBox.checked = true : itemCheckBox.checked = false;
             }
         }, false);
     }
