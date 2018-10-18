@@ -1,2 +1,2 @@
 # F2EW3_AdminOrder
-運用技術 - 原生JS、HTML5、CSS3
+運用技術 - ES6 J、HTML5、CSS3
